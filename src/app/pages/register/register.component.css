@@ -1,0 +1,59 @@
+form {
+  max-width: 400px;
+  margin: 2rem auto;
+  background: var(--color-bg-white);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+  font-family: 'Poppins', sans-serif;
+  color: var(--color-text-default);
+  border: 1px solid var(--color-border-light);
+}
+
+label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  color: var(--color-text-default);
+}
+
+input {
+  width: 93%;
+  padding: 0.6rem 0.8rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid var(--color-border-gray);
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--color-bg-white);
+  color: var(--color-text-default);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--color-btn-primary);
+  box-shadow: 0 0 5px var(--color-btn-primary-hover);
+  background-color: var(--color-bg-white);
+}
+
+button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--color-btn-primary);
+  border: none;
+  color: var(--color-bg-white);
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:disabled {
+  background-color: var(--color-bg-hover-light);
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background-color: var(--color-btn-primary-hover);
+}

@@ -1,0 +1,22 @@
+<div class="tooltip-container">
+  <a routerLink="/">
+    <img src="assets/logo.svg" alt="Logo" class="logo"/>
+  </a>
+
+  <!-- Desktop view -->
+  <button class="login-button" (click)="login()" *ngIf="!isMobile && !isLoggedIn">
+    Login
+  </button>
+  <button class="logout-button" (click)="logout()" *ngIf="!isMobile && isLoggedIn">
+    Logout
+  </button>
+
+  <!-- Mobile view -->
+  <div class="dropdown" *ngIf="isMobile">
+    <button class="menu-button" (click)="toggleMenu()"><i class="fa-solid fa-bars"></i></button>
+    <ul *ngIf="isMenuOpen" class="menu-options">
+        <li *ngIf="!isLoggedIn" (click)="login()">Login</li>
+        <li *ngIf="isLoggedIn" (click)="login()">Logout</li>
+    </ul>
+  </div>
+</div>

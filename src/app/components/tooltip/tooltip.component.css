@@ -1,0 +1,86 @@
+.tooltip-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background-color: var(--color-bg-light);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.tooltip-container img.logo {
+  height: 40px;
+}
+
+.tooltip-container .login-button {
+  background-color: var(--color-btn-primary);
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.tooltip-container .logout-button {
+  background-color: var(--color-btn-primary);
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.tooltip-container .dropdown {
+  position: relative;
+}
+
+.tooltip-container .dropdown .menu-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.tooltip-container .dropdown .menu-options {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  list-style: none;
+  background-color: var(--color-bg-white);
+  border: 1px solid var(--color-border-gray);
+  margin: 0;
+  padding: 0;
+  width: 120px;
+  z-index: 1000;
+}
+
+.tooltip-container .dropdown .menu-options li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.tooltip-container .dropdown .menu-options li:hover {
+  background-color: var(--color-bg-hover-light);
+}
+
+.tooltip-container i {
+  color: var(--color-text-default);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tooltip-container i:hover {
+  color: var(--color-btn-primary-hover);
+}
+
+.dropdown ul li {
+  color: var(--color-text-default);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dropdown ul li:hover {
+  color: var(--color-btn-primary-hover);
+}

@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --color-bg-light: #f9f9f9;
+  --color-border-light: #ddd;
+  --color-btn-primary: #007bff;
+  --color-btn-primary-hover: #0077ff;
+  --color-bg-white: #ffffff;
+  --color-border-gray: #ccc;
+  --color-bg-hover-light: #f0f0f0;
+  --color-text-default: inherit;
+}
+
+* {
+    margin: 0;
+    padding:0;
+    font-family: 'Inter', sans-serif;
+}
+html, body { height: 100%; }
