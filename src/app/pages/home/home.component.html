@@ -1,1 +1,2 @@
-<h1>Bienvenido a ShopNest!</h1>
+<app-search (searchEvent)="filterProducts($event)"></app-search>
+<app-products [products]="filteredProducts"></app-products>

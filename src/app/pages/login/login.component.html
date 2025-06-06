@@ -1,11 +1,15 @@
-<form (ngSubmit)="onLoginSubmit()" #registerForm="ngForm">
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" [(ngModel)]="email" required email />
+<form (ngSubmit)="onLoginSubmit()" #registerForm="ngForm" novalidate>
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Email</mat-label>
+    <input matInput type="email" name="email" [(ngModel)]="email" required email />
+  </mat-form-field>
 
-    <label for="password">Contraseña:</label>
-    <input type="password" id="password" name="password" [(ngModel)]="password" required minlength="6" />
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Contraseña</mat-label>
+    <input matInput type="password" name="password" [(ngModel)]="password" required minlength="6" />
+  </mat-form-field>
 
-    <button type="submit" [disabled]="registerForm.invalid">Continuar</button>
+  <button mat-flat-button color="primary" type="submit" [disabled]="registerForm.invalid">Continuar</button>
 
-    <a routerLink="/register">Registrarse</a>
+  <button mat-button color="primary" routerLink="/register">¿No tienes cuenta? Registrate</button>
 </form>

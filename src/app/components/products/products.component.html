@@ -1,0 +1,26 @@
+<div [ngClass]="isMobile ? 'one-column' : 'two-columns'" class="product-grid">
+  <button *ngFor="let product of products" class="product-card-button" (click)="viewProductDetails(product.id)">
+    <img [src]="product.image" alt="{{ product.title }}" class="product-image" />
+    
+    <h2 class="product-title">{{ product.title }}</h2>
+
+    <div class="product-footer">
+      <div class="product-rating">
+        <div class="star-rating">
+          <span *ngFor="let star of [1,2,3,4,5]">
+            <mat-icon *ngIf="product.rating.rate >= star">star</mat-icon>
+            <mat-icon *ngIf="product.rating.rate >= star - 0.5 && product.rating.rate < star">star_half</mat-icon>
+            <mat-icon *ngIf="product.rating.rate < star - 0.5">star_border</mat-icon>
+          </span>
+        </div>
+        <span>{{ product.rating.rate }} ({{ product.rating.count }})</span>
+      </div>
+
+      <span>
+        <span class="product-hole">{{ product.price.toString().split('.')[0] }}</span>
+        <span class="product-fraction">.{{ product.price.toString().split('.')[1] }}</span>
+        <span class="product-symbol">$</span>
+      </span>
+    </div>
+  </button>
+</div>

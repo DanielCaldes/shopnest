@@ -1,0 +1,49 @@
+@import url("material-theme.css");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --color-primary: #007bff;
+  --color-primary-contrast: #ffffff;
+
+  --color-secondary: #ff4081;
+  --color-secondary-contrast: #ffffff;
+
+  --color-error: #f44336;
+  --color-error-contrast: #ffffff;
+
+  --color-surface: #ffffff;
+  --color-on-surface: #000000;
+
+  --color-bg-light: #f9f9f9;
+  --color-border-light: #dddddd;
+  --color-bg-gray-light: #f1f1f1;
+  --color-border-gray: #cccccc;
+  --color-rating-star: #ffc107;
+
+  --font-family-base: 'Inter', sans-serif;
+
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-base);
+}
+
+html, body {
+  height: 100%;
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}

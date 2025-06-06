@@ -1,73 +1,33 @@
 form {
-    max-width: 400px;
-    margin: 2rem auto;
-    background: var(--color-bg-white);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
-    font-family: 'Poppins', sans-serif;
-    color: var(--color-text-default);
-    border: 1px solid var(--color-border-light);
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--color-bg-white);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-label {
-    display: block;
-    margin-bottom: 0.4rem;
-    font-weight: 600;
-    color: var(--color-text-default);
+.full-width {
+  width: 100%;
 }
 
-input {
-    width: 93%;
-    padding: 0.6rem 0.8rem;
-    margin-bottom: 1.2rem;
-    border: 1px solid var(--color-border-gray);
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    background-color: var(--color-bg-white);
-    color: var(--color-text-default);
+button[mat-flat-button] {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
-input:focus {
-    outline: none;
-    border-color: var(--color-btn-primary);
-    box-shadow: 0 0 5px var(--color-btn-primary-hover);
-    background-color: var(--color-bg-white);
+a[mat-button] {
+  display: block;
+  margin: 1rem auto 0;
+  font-weight: 500;
 }
 
-button {
-    width: 100%;
-    padding: 0.75rem;
-    background-color: var(--color-btn-primary);
-    border: none;
-    color: var(--color-bg-white);
-    font-weight: 600;
-    font-size: 1.1rem;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:disabled {
-    background-color: var(--color-bg-hover-light);
-    cursor: not-allowed;
-}
-
-button:hover:not(:disabled) {
-    background-color: var(--color-btn-primary-hover);
-}
-
-a {
-    padding-top: 1rem;
-    color: var(--color-text-default);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-a:hover {
-    color: var(--color-btn-primary-hover);
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  -webkit-text-fill-color: inherit;
+  transition: background-color 9999s ease-out, color 9999s ease-out;
 }

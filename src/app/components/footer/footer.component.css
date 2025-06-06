@@ -35,7 +35,7 @@
 }
 
 .footer-column ul li a:hover {
-  color: var(--color-btn-primary-hover);
+  color: var(--color-primary);
 }
 
 @media (max-width: 768px) {

@@ -1,0 +1,17 @@
+:root {
+  --mdc-theme-primary: var(--color-primary);
+  --mdc-theme-on-primary: var(--color-primary-contrast);
+
+  --mdc-theme-secondary: var(--color-secondary);
+  --mdc-theme-on-secondary: var(--color-secondary-contrast);
+
+  --mdc-theme-error: var(--color-error);
+  --mdc-theme-on-error: var(--color-error-contrast);
+
+  --mdc-theme-background: var(--color-surface);
+  --mdc-theme-surface: var(--color-surface);
+  --mdc-theme-on-surface: var(--color-on-surface);
+
+  --mdc-filled-button-container-color: var(--color-primary);
+  --mdc-filled-button-label-text-color: var(--color-primary-contrast);
+}
