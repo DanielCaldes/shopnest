@@ -1,6 +1,7 @@
 .basket-container{
     display:flex;
     flex-direction: row;
+    justify-content:space-around;
 }
 
 
@@ -12,6 +13,7 @@
 }
 
 form {
+  max-width: 500px;
   margin: 2rem;
   padding: 1.5rem;
   margin-left:0;
@@ -43,9 +45,9 @@ input:-webkit-autofill {
   padding: 1.5rem;
   background-color: #ffffff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   flex: 1;
+  border-radius: 8px;
 }
 
 ol {
@@ -118,7 +120,14 @@ li {
     flex-direction: column;
   }
   form{
-    margin-left:2rem;
-    margin-top:0;
+    margin:0;
+    margin-bottom: 2rem;
+    box-shadow:none;
+  }
+  .cart-list{
+    margin:0;
+    margin-top:2rem;
+    margin-bottom:2rem;
+    box-shadow:none;
   }
 }

@@ -38,6 +38,10 @@
   color: var(--color-primary);
 }
 
+.footer p{
+  margin:0;
+}
+
 @media (max-width: 768px) {
   .footer {
     flex-direction: column;

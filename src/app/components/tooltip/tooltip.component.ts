@@ -6,11 +6,12 @@ import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth/auth.service';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu';
 
 @Component({
   selector: 'app-tooltip',
   standalone: true,
-  imports: [NgIf, RouterLink, MatButtonModule, MatDialogModule, MatIconModule],
+  imports: [NgIf, RouterLink, MatButtonModule, MatDialogModule, MatIconModule, MatMenuModule],
   templateUrl: './tooltip.component.html',
   styleUrl: './tooltip.component.css'
 })

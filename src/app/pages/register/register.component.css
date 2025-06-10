@@ -26,3 +26,9 @@ input:-webkit-autofill {
   -webkit-text-fill-color: inherit;
   transition: background-color 9999s ease-out, color 9999s ease-out;
 }
+
+@media (max-width: 768px) {
+  form{
+    box-shadow: none;
+  }
+}

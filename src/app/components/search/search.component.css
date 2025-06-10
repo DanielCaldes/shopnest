@@ -29,3 +29,10 @@
   background: transparent;
   color: var(--color-text-default);
 }
+
+
+@media (max-width: 768px) {
+  .search-bar{
+    margin: 1rem;
+  }
+}

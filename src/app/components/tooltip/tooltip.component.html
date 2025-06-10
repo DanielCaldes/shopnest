@@ -19,11 +19,11 @@
 
   <!-- Mobile view -->
   <div class="dropdown" *ngIf="isMobile">
-    <button mat-icon-button class="menu-button" (click)="toggleMenu()"><mat-icon>menu</mat-icon></button>
-    <ul *ngIf="isMenuOpen" class="menu-options">
-        <li *ngIf="!isLoggedIn" (click)="login()">Login</li>
-        <li *ngIf="isLoggedIn" (click)="logout()">Logout</li>
-        <li (click)="basket()">Cart</li>
-    </ul>
+    <button mat-icon-button class="menu-button" [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon></button>
+    <mat-menu #menu="matMenu" class="menu-options">
+        <button mat-menu-item *ngIf="!isLoggedIn" (click)="login()"><mat-icon>login</mat-icon> Iniciar sesión</button>
+        <button mat-menu-item *ngIf="isLoggedIn" (click)="logout()"><mat-icon>logout</mat-icon> Salir de sesión</button>
+        <button mat-menu-item (click)="basket()"><mat-icon>shopping_cart</mat-icon> Cesta</button>
+    </mat-menu>
   </div>
 </div>
