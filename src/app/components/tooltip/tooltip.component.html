@@ -19,10 +19,10 @@
 
   <!-- Mobile view -->
   <div class="dropdown" *ngIf="isMobile">
-    <button class="menu-button" (click)="toggleMenu()"><i class="fa-solid fa-bars"></i></button>
+    <button mat-icon-button class="menu-button" (click)="toggleMenu()"><mat-icon>menu</mat-icon></button>
     <ul *ngIf="isMenuOpen" class="menu-options">
         <li *ngIf="!isLoggedIn" (click)="login()">Login</li>
-        <li *ngIf="isLoggedIn" (click)="login()">Logout</li>
+        <li *ngIf="isLoggedIn" (click)="logout()">Logout</li>
         <li (click)="basket()">Cart</li>
     </ul>
   </div>

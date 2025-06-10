@@ -38,6 +38,7 @@ export class TooltipComponent {
 
   login() {
     this.router.navigate(['/login']);
+    this.isMenuOpen = false;
   }
 
   logout() {
@@ -47,10 +48,12 @@ export class TooltipComponent {
         this.authService.logout();
       }
     });
+    this.isMenuOpen = false;
   }
 
   basket(){
     this.router.navigate(['/basket']);
+    this.isMenuOpen = false;
   }
   
   toggleMenu() {
