@@ -1,0 +1,19 @@
+.filters-container{
+    margin-top:1rem;
+    margin-left:1rem;
+    display:flex;
+    gap:1rem;
+    width:100%;
+    justify-content:flex-start;
+}
+
+.filteredProducts-button{
+    margin-left:1rem;
+}
+
+@media (max-width: 768px) {
+  .filters-container {
+    flex-direction: column;
+    margin-left:1rem;
+  }
+}

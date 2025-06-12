@@ -1,0 +1,18 @@
+<div class="sort-selector-container">
+    <mat-form-field appearance="outline">
+        <mat-label>Ordenar por</mat-label>
+        <mat-select [(ngModel)]="selectedField" (selectionChange)="onSortChange()">
+            <mat-option value="price">Precio</mat-option>
+            <mat-option value="rating.rate">Valoración</mat-option>
+            <mat-option value="title">Nombre</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Dirección</mat-label>
+        <mat-select [(ngModel)]="selectedDirection" (selectionChange)="onSortChange()">
+            <mat-option value="asc">Ascendente</mat-option>
+            <mat-option value="desc">Descendente</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>

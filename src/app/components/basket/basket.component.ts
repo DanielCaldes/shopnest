@@ -36,7 +36,7 @@ export class BasketComponent implements OnInit{
       name: ['',[Validators.required, Validators.minLength(2)]],
       surname: ['',[Validators.required, Validators.minLength(2)]],
       address: ['',[Validators.required]],
-      cp: ['',[Validators.required,Validators.minLength(8)]],
+      cp: ['',[Validators.required,Validators.minLength(5),Validators.maxLength(8)]],
       phone: ['',[Validators.required]]
     });
 
@@ -93,8 +93,12 @@ export class BasketComponent implements OnInit{
     this.router.navigate(['/productDetails', id]);
   }
 
-  send(){
-    console.log("Comprado");
+  send() {
+    this.result = 0;
+    this.mocked = [];
+    this.numberProducts = 0;
+    
+    console.log("Enviado");
   }
 
   private updateTotals(quantityDelta: number, priceDelta: number): void {

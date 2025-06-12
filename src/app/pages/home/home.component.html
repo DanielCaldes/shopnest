@@ -1,2 +1,9 @@
 <app-search (searchEvent)="filterProducts($event)"></app-search>
+<button mat-raised-button (click)="showFilters = !showFilters" class="filteredProducts-button">
+  {{ showFilters ? 'Ocultar filtros' : 'Mostrar filtros' }}<mat-icon>{{ showFilters ? 'filter_list_off' : 'filter_list' }}</mat-icon>
+</button>
+<div class="filters-container" [hidden]="!showFilters" [style.display]="showFilters ? 'flex' : 'none'">
+    <app-category-filter [categories]="categories" (categorySelected)="onCategorySelected($event)"></app-category-filter>
+    <app-sort-selector (sortChanged)="onSortChanged($event)"></app-sort-selector>
+</div>
 <app-products [products]="filteredProducts"></app-products>

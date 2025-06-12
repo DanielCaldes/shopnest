@@ -1,0 +1,12 @@
+.sort-selector-container{
+    display:flex;
+    gap:0.5rem;
+}
+
+@media (max-width: 480px) {
+  .sort-selector-container {
+    flex-direction: column;
+    gap:0;
+    width:212px;
+  }
+}
