@@ -42,6 +42,10 @@
   margin:0;
 }
 
+.footer-a-nav{
+  cursor:pointer;
+}
+
 @media (max-width: 768px) {
   .footer {
     flex-direction: column;

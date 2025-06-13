@@ -1,9 +1,28 @@
-<app-search (searchEvent)="filterProducts($event)"></app-search>
-<button mat-raised-button (click)="showFilters = !showFilters" class="filteredProducts-button">
-  {{ showFilters ? 'Ocultar filtros' : 'Mostrar filtros' }}<mat-icon>{{ showFilters ? 'filter_list_off' : 'filter_list' }}</mat-icon>
-</button>
-<div class="filters-container" [hidden]="!showFilters" [style.display]="showFilters ? 'flex' : 'none'">
-    <app-category-filter [categories]="categories" (categorySelected)="onCategorySelected($event)"></app-category-filter>
-    <app-sort-selector (sortChanged)="onSortChanged($event)"></app-sort-selector>
+<div class="page-container">
+    <app-search (searchEvent)="filterProducts($event)"></app-search>
+
+    <button mat-raised-button (click)="showFilters = !showFilters" class="filteredProducts-button">
+    {{ showFilters ? 'Ocultar filtros' : 'Mostrar filtros' }}<mat-icon>{{ showFilters ? 'filter_list_off' : 'filter_list' }}</mat-icon>
+    </button>
+
+    <div class="filters-container" [hidden]="!showFilters" [style.display]="showFilters ? 'flex' : 'none'">
+        <app-category-filter [categories]="categories" (categorySelected)="onCategorySelected($event)"></app-category-filter>
+        <app-sort-selector (sortChanged)="onSortChanged($event)"></app-sort-selector>
+    </div>
+
+    <div class="content-container">
+        <div *ngIf="loading" class="products-spinner-container">
+            <mat-spinner></mat-spinner>
+        </div>
+
+        <app-products *ngIf="!loading" [products]="pagedProducts" class="content-fullsize"></app-products>
+    </div>
+
+    <mat-paginator
+            [length]="filteredProducts.length"
+            [pageSize]="pageSize"
+            [pageSizeOptions]="[1, 5, 10, 20]"
+            (page)="onPageChange($event)"
+        >
+    </mat-paginator>
 </div>
-<app-products [products]="filteredProducts"></app-products>

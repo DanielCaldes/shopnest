@@ -1,17 +1,21 @@
 import { MatDialog } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
-import { NgIf } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import { Component, HostListener, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth/auth.service';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
+import { MatBadgeModule } from '@angular/material/badge';
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { selectCartTotalQuantity } from '../../store/cart.selectors';
 
 @Component({
   selector: 'app-tooltip',
   standalone: true,
-  imports: [NgIf, RouterLink, MatButtonModule, MatDialogModule, MatIconModule, MatMenuModule],
+  imports: [NgIf, RouterLink, MatButtonModule, MatDialogModule, MatIconModule, MatMenuModule, MatBadgeModule, CommonModule],
   templateUrl: './tooltip.component.html',
   styleUrl: './tooltip.component.css'
 })
@@ -19,13 +23,16 @@ export class TooltipComponent {
   isMobile = false;
   isMenuOpen = false;
   isLoggedIn = false;
+  cartQuantity$: Observable<number>;
 
   private dialog = inject(MatDialog);
 
-  constructor(private router: Router, private authService: AuthService) {
+  constructor(private router: Router, private authService: AuthService, private store:Store) {
     this.authService.isLoggedIn$.subscribe(status => {
       this.isLoggedIn = status;
     });
+    
+    this.cartQuantity$ = this.store.select(selectCartTotalQuantity);
   }
 
   @HostListener('window:resize', [])

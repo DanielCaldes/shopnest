@@ -3,12 +3,31 @@
     margin-left:1rem;
     display:flex;
     gap:1rem;
-    width:100%;
+    width:auto%;
     justify-content:flex-start;
 }
 
 .filteredProducts-button{
     margin-left:1rem;
+    width:200px;
+}
+
+.page-container {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-fullsize{
+    width: 100%;
+    padding: 1rem;
 }
 
 @media (max-width: 768px) {

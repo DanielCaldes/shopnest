@@ -1,3 +1,12 @@
+:host {
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items:center;
+  height:100%;
+  width: 100%;
+}
+
 .product-detail-container {
   display: flex;
   flex-direction: row;
@@ -6,6 +15,7 @@
   background-color: #fff;
   flex-wrap: wrap;
   justify-content: center;
+  max-width: 100%;
 }
 
 .product-detail-image {
@@ -13,7 +23,7 @@
   width: 100%;
   object-fit: contain;
   border-radius: 8px;
-  flex: 1 1 100%;
+  flex: 1 1 300px;
 }
 
 .product-detail-info {

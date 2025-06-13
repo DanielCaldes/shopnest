@@ -5,7 +5,7 @@
             <span>Precio</span>
         </div>
         <ol>
-            <li *ngFor="let product of mocked">
+            <li *ngFor="let product of cartItems$ | async">
                 <button class="cart-list-button-image" (click)="viewProductDetails(product.id)">
                     <img src="{{product.image}}" class="cart-list-image">
                 </button>
@@ -22,8 +22,8 @@
             </li>
         </ol>
         <div class="cart-sum-container">
-            <span class="cart-sum-title">Subtotal ({{numberProducts}} productos):</span>
-            <span class="cart-sum-price">{{result}}$</span>
+            <span class="cart-sum-title">Subtotal ({{totalQuantity$ | async}} productos):</span>
+            <span class="cart-sum-price">{{totalPrice$ | async}}$</span>
         </div>
     </div>
 
