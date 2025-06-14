@@ -10,7 +10,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { selectCartItems, selectCartTotalPrice, selectCartTotalQuantity } from '../../store/cart.selectors';
 import { Product } from '../../models/product.model'
-import { removeFromCart, updateProductQuantity, clearCart } from '../../store/cart.actions';
+import { removeFromCart, updateProductQuantity } from '../../store/cart.actions';
 
 @Component({
   selector: 'app-basket',
@@ -64,7 +64,7 @@ export class BasketComponent{
   }
 
   send() {
-    this.store.dispatch(clearCart());
     console.log("Enviado");
+    this.router.navigateByUrl('/checkout');
   }
 }

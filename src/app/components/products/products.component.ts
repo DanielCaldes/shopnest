@@ -27,6 +27,7 @@ export class ProductsComponent implements OnInit{
   }
 
   viewProductDetails(id:number){
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     this.router.navigate(['/productDetails', id]);
   }
 }

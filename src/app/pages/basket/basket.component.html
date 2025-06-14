@@ -1,0 +1,87 @@
+<div class="basket-container">
+    <div class="cart-list-container">
+        <h2>Cesta</h2>
+        <div class="cart-list-header">
+            <span class="cart-price-tag">Precio</span>
+        </div>
+        <ol>
+            <li *ngFor="let product of cartItems$ | async"  class="cart-list-item">
+                <button class="cart-list-button-image" (click)="viewProductDetails(product.id)">
+                    <img src="{{product.image}}" class="cart-list-image">
+                </button>
+                <div class="product-info">
+                    <span>{{product.title}}</span>
+                    <div class="product-quantity">
+                        <button mat-icon-button *ngIf="product.quantity==1" (click)="deleteProduct(product)"><mat-icon>delete</mat-icon></button>
+                        <button mat-icon-button *ngIf="product.quantity>1" (click)="changeProductQuantity(product, -1)"><mat-icon>remove</mat-icon></button>
+                        <span>{{product.quantity}}</span>
+                        <button mat-icon-button (click)="changeProductQuantity(product, 1)"><mat-icon>add</mat-icon></button>
+                    </div>
+                </div>
+                <span class="cart-sum-price">{{product.price}}$</span>
+            </li>
+        </ol>
+        <div class="cart-sum-container">
+            <span class="cart-sum-title">Subtotal ({{totalQuantity$ | async}} productos):</span>
+            <span class="cart-sum-price">{{totalPrice$ | async}}$</span>
+        </div>
+    </div>
+
+    <ng-container *ngIf="cartItems$ | async as cartItems">
+        <form [formGroup]="myForm" (ngSubmit)="send()" novalidate *ngIf="cartItems.length > 0">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Nombre</mat-label>
+                <input matInput type="text" formControlName="name" />
+                <mat-error *ngIf="myForm.get('name')?.hasError('required') && myForm.get('name')?.touched">
+                El nombre es obligatorio
+                </mat-error>
+                <mat-error *ngIf="myForm.get('name')?.hasError('minlength') && myForm.get('name')?.touched">
+                Mínimo 2 caracteres
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Apellido</mat-label>
+                <input matInput type="text" formControlName="surname" />
+                <mat-error *ngIf="myForm.get('surname')?.hasError('required') && myForm.get('surname')?.touched">
+                El apellido es obligatorio
+                </mat-error>
+                <mat-error *ngIf="myForm.get('surname')?.hasError('minlength') && myForm.get('surname')?.touched">
+                Mínimo 2 caracteres
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Dirección</mat-label>
+                <input matInput type="text" formControlName="address" />
+                <mat-error *ngIf="myForm.get('address')?.hasError('required') && myForm.get('address')?.touched">
+                La dirección es obligatoria
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>CP</mat-label>
+                <input matInput type="text" formControlName="cp" maxlength="8" />
+                <mat-error *ngIf="myForm.get('cp')?.hasError('required') && myForm.get('cp')?.touched">
+                El código postal es obligatorio
+                </mat-error>
+                <mat-error *ngIf="myForm.get('cp')?.hasError('minlength') && myForm.get('cp')?.touched">
+                El código postal debe tener al menos 5 dígitos
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Teléfono</mat-label>
+                <input matInput type="number" formControlName="phone" />
+                <mat-error *ngIf="myForm.get('phone')?.hasError('required') && myForm.get('phone')?.touched">
+                El teléfono es obligatorio
+                </mat-error>
+            </mat-form-field>
+
+            <button mat-flat-button color="primary" type="submit" [disabled]="myForm.invalid">
+                Aceptar
+            </button>
+        </form>
+    </ng-container>
+
+</div>

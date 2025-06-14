@@ -7,6 +7,7 @@ import { cartReducer } from './store/cart.reducer';
 import { loadState } from './store/localstorage';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient } from '@angular/common/http';
+import { provideNgxMask } from 'ngx-mask';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -17,6 +18,7 @@ export const appConfig: ApplicationConfig = {
       { initialState: loadState() }
     ),
     provideAnimationsAsync(),
-    provideHttpClient()
+    provideHttpClient(),
+    provideNgxMask(),
   ]
 };

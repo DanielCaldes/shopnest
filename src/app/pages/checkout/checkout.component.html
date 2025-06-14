@@ -1,0 +1,44 @@
+<form (ngSubmit)="onCheckoutSubmit()" #registerForm="ngForm" novalidate>
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Número de tarjeta</mat-label>
+    <input matInput
+        type=" text"
+        name="cardNumber"
+        [(ngModel)]="cardNumber"
+        mask="0000 0000 0000 0000"
+        maxlength="19"
+        placeholder="XXXX XXXX XXXX XXXX"
+        inputmode="numeric"
+        required 
+    />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Fecha de caducidad</mat-label>
+    <input matInput
+        type="text"
+        name="expireDate"
+        [(ngModel)]="expireDate"
+        mask="00/00"
+        placeholder="MM/AA"
+        required
+    />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>CVC</mat-label>
+    <input matInput
+        type="text"
+        name="CVC"
+        [(ngModel)]="cvc"
+        mask="000"
+        placeholder="XXX"
+        required
+    />
+  </mat-form-field>
+
+  <button mat-flat-button color="primary" type="submit" [disabled]="registerForm.invalid || loading">Continuar</button>
+  <div class="submit-spinner-container">
+    <mat-spinner *ngIf="loading"></mat-spinner>
+  </div>
+</form>
