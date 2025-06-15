@@ -2,14 +2,15 @@
   <mat-form-field appearance="outline" class="full-width">
     <mat-label>Número de tarjeta</mat-label>
     <input matInput
-        type=" text"
+        type="text"
         name="cardNumber"
         [(ngModel)]="cardNumber"
         mask="0000 0000 0000 0000"
         maxlength="19"
         placeholder="XXXX XXXX XXXX XXXX"
         inputmode="numeric"
-        required 
+        required
+        data-cy="paycard-number-input"
     />
   </mat-form-field>
 
@@ -22,6 +23,7 @@
         mask="00/00"
         placeholder="MM/AA"
         required
+        data-cy="expire-date-input"
     />
   </mat-form-field>
 
@@ -34,10 +36,11 @@
         mask="000"
         placeholder="XXX"
         required
+        data-cy="cvc-input"
     />
   </mat-form-field>
 
-  <button mat-flat-button color="primary" type="submit" [disabled]="registerForm.invalid || loading">Continuar</button>
+  <button mat-flat-button color="primary" type="submit" [disabled]="registerForm.invalid || loading" data-cy="confirm-payment-data-button">Continuar</button>
   <div class="submit-spinner-container">
     <mat-spinner *ngIf="loading"></mat-spinner>
   </div>

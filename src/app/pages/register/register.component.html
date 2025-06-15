@@ -1,22 +1,40 @@
 <form (ngSubmit)="onFormSubmit()" #registerForm="ngForm" novalidate>
   <mat-form-field appearance="outline" class="full-width">
     <mat-label>Nombre</mat-label>
-    <input matInput type="text" name="name" [(ngModel)]="name" required />
+    <input matInput type="text" name="name" [(ngModel)]="name" #nameModel="ngModel" required />
+    <mat-error *ngIf="nameModel.errors?.['required'] && nameModel.touched">
+      El nombre es obligatorio
+    </mat-error>
   </mat-form-field>
 
   <mat-form-field appearance="outline" class="full-width">
     <mat-label>Apellido</mat-label>
-    <input matInput type="text" name="surname" [(ngModel)]="surname" required />
+    <input matInput type="text" name="surname" [(ngModel)]="surname" #surnameModel="ngModel" required />
+    <mat-error *ngIf="surnameModel.errors?.['required'] && surnameModel.touched">
+      El apellido es obligatorio
+    </mat-error>
   </mat-form-field>
 
   <mat-form-field appearance="outline" class="full-width">
     <mat-label>Email</mat-label>
-    <input matInput type="email" name="email" [(ngModel)]="email" required email />
+    <input matInput type="email" name="email" [(ngModel)]="email" #emailModel="ngModel" required email />
+    <mat-error *ngIf="emailModel.errors?.['required'] && emailModel.touched">
+      El email es obligatorio
+    </mat-error>
+    <mat-error *ngIf="emailModel.errors?.['email'] && emailModel.touched">
+      Introduce un email válido
+    </mat-error>
   </mat-form-field>
 
   <mat-form-field appearance="outline" class="full-width">
     <mat-label>Contraseña</mat-label>
-    <input matInput type="password" name="password" [(ngModel)]="password" required minlength="6" />
+    <input matInput type="password" name="password" [(ngModel)]="password" #passwordModel="ngModel" required minlength="6" />
+    <mat-error *ngIf="passwordModel.errors?.['required'] && passwordModel.touched">
+      La contraseña es obligatoria
+    </mat-error>
+    <mat-error *ngIf="passwordModel.errors?.['minlength'] && passwordModel.touched">
+      Mínimo 6 caracteres
+    </mat-error>
   </mat-form-field>
 
   <button mat-flat-button color="primary" type="submit" [disabled]="registerForm.invalid">

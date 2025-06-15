@@ -1,5 +1,5 @@
 <div [ngClass]="isMobile ? 'one-column' : 'two-columns'" class="product-grid">
-  <button *ngFor="let product of products" class="product-card-button" (click)="viewProductDetails(product.id)">
+  <button *ngFor="let product of products" class="product-card-button" (click)="viewProductDetails(product.id)" [attr.data-cy]="'product-details-' + product.id">
     <img [src]="product.image" alt="{{ product.title }}" class="product-image" />
     
     <h2 class="product-title">{{ product.title }}</h2>
@@ -18,7 +18,7 @@
 
       <span>
         <span class="product-hole">{{ product.price.toString().split('.')[0] }}</span>
-        <span class="product-fraction">.{{ product.price.toString().split('.')[1] }}</span>
+        <span class="product-fraction">.{{ product.price.toFixed(2).toString().split('.')[1] }}</span>
         <span class="product-symbol">$</span>
       </span>
     </div>

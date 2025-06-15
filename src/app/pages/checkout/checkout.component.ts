@@ -32,6 +32,7 @@ export class CheckoutComponent {
 
       if (this.cardNumber !== "4999999999999999") {
         this.store.dispatch(clearCart());
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         this.router.navigateByUrl("/payment-success");
       } else {
         alert('Hay un error procesando la compra, revise los datos introducidos.');

@@ -3,11 +3,12 @@ import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [FormsModule, MatInputModule, MatButtonModule],
+  imports: [FormsModule, MatInputModule, MatButtonModule, CommonModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })

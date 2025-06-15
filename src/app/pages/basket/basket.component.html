@@ -31,54 +31,54 @@
         <form [formGroup]="myForm" (ngSubmit)="send()" novalidate *ngIf="cartItems.length > 0">
             <mat-form-field appearance="outline" class="full-width">
                 <mat-label>Nombre</mat-label>
-                <input matInput type="text" formControlName="name" />
+                <input matInput type="text" formControlName="name" data-cy="name-input"/>
                 <mat-error *ngIf="myForm.get('name')?.hasError('required') && myForm.get('name')?.touched">
-                El nombre es obligatorio
+                    El nombre es obligatorio
                 </mat-error>
                 <mat-error *ngIf="myForm.get('name')?.hasError('minlength') && myForm.get('name')?.touched">
-                Mínimo 2 caracteres
+                    Mínimo 2 caracteres
                 </mat-error>
             </mat-form-field>
 
             <mat-form-field appearance="outline" class="full-width">
                 <mat-label>Apellido</mat-label>
-                <input matInput type="text" formControlName="surname" />
+                <input matInput type="text" formControlName="surname" data-cy="surname-input"/>
                 <mat-error *ngIf="myForm.get('surname')?.hasError('required') && myForm.get('surname')?.touched">
-                El apellido es obligatorio
+                    El apellido es obligatorio
                 </mat-error>
                 <mat-error *ngIf="myForm.get('surname')?.hasError('minlength') && myForm.get('surname')?.touched">
-                Mínimo 2 caracteres
+                    Mínimo 2 caracteres
                 </mat-error>
             </mat-form-field>
 
             <mat-form-field appearance="outline" class="full-width">
                 <mat-label>Dirección</mat-label>
-                <input matInput type="text" formControlName="address" />
+                <input matInput type="text" formControlName="address" data-cy="address-input"/>
                 <mat-error *ngIf="myForm.get('address')?.hasError('required') && myForm.get('address')?.touched">
-                La dirección es obligatoria
+                    La dirección es obligatoria
                 </mat-error>
             </mat-form-field>
 
             <mat-form-field appearance="outline" class="full-width">
                 <mat-label>CP</mat-label>
-                <input matInput type="text" formControlName="cp" maxlength="8" />
+                <input matInput type="text" formControlName="cp" maxlength="8" data-cy="cp-input"/>
                 <mat-error *ngIf="myForm.get('cp')?.hasError('required') && myForm.get('cp')?.touched">
-                El código postal es obligatorio
+                    El código postal es obligatorio
                 </mat-error>
                 <mat-error *ngIf="myForm.get('cp')?.hasError('minlength') && myForm.get('cp')?.touched">
-                El código postal debe tener al menos 5 dígitos
+                    El código postal debe tener al menos 5 dígitos
                 </mat-error>
             </mat-form-field>
 
             <mat-form-field appearance="outline" class="full-width">
                 <mat-label>Teléfono</mat-label>
-                <input matInput type="number" formControlName="phone" />
+                <input matInput type="number" formControlName="phone" data-cy="phone-input"/>
                 <mat-error *ngIf="myForm.get('phone')?.hasError('required') && myForm.get('phone')?.touched">
-                El teléfono es obligatorio
+                    El teléfono es obligatorio
                 </mat-error>
             </mat-form-field>
 
-            <button mat-flat-button color="primary" type="submit" [disabled]="myForm.invalid">
+            <button mat-flat-button color="primary" type="submit" [disabled]="myForm.invalid" data-cy="send-data-button">
                 Aceptar
             </button>
         </form>

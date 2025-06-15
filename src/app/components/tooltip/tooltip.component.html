@@ -6,7 +6,7 @@
   <!-- Desktop view -->
    <div class="options" *ngIf="!isMobile">
     <button mat-icon-button (click)="basket()">
-      <mat-icon [matBadge]="cartQuantity$ | async" matBadgePosition="below after">shopping_cart</mat-icon>
+      <mat-icon [matBadge]="cartQuantity$ | async" matBadgePosition="below after" data-cy="cart-button" aria-hidden="false">shopping_cart</mat-icon>
     </button>
     <button mat-icon-button class="login-button" (click)="login()" *ngIf="!isLoggedIn">
       <mat-icon>login</mat-icon>
@@ -23,7 +23,7 @@
     <mat-menu #menu="matMenu" class="menu-options">
         <button mat-menu-item *ngIf="!isLoggedIn" (click)="login()"><mat-icon>login</mat-icon> Iniciar sesión</button>
         <button mat-menu-item *ngIf="isLoggedIn" (click)="logout()"><mat-icon>logout</mat-icon> Salir de sesión</button>
-        <button mat-menu-item (click)="basket()"><mat-icon [matBadge]="cartQuantity$ | async" matBadgePosition="below after">shopping_cart</mat-icon> Cesta</button>
+        <button mat-menu-item (click)="basket()"><mat-icon [matBadge]="cartQuantity$ | async" matBadgePosition="below after" data-cy="cart-button" aria-hidden="false">shopping_cart</mat-icon> Cesta</button>
     </mat-menu>
   </div>
 </div>

@@ -18,7 +18,7 @@ export class ProductsComponent implements OnInit{
   constructor(private router : Router){}
 
   ngOnInit(): void {
-    this.onResize();  
+    this.onResize();
   }
 
   @HostListener('window:resize', [])

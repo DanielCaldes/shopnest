@@ -60,11 +60,12 @@ export class BasketComponent{
   }
 
   viewProductDetails(id:number){
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     this.router.navigate(['/productDetails', id]);
   }
 
   send() {
-    console.log("Enviado");
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     this.router.navigateByUrl('/checkout');
   }
 }

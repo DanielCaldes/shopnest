@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TooltipComponent } from './tooltip.component';
+import { provideStore } from '@ngrx/store';
+import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
 
 describe('TooltipComponent', () => {
   let component: TooltipComponent;
@@ -8,7 +11,17 @@ describe('TooltipComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TooltipComponent]
+      imports: [TooltipComponent],
+      providers:[
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            params: of({}),
+            snapshot: { paramMap: { get: () => null } }
+          }
+        },
+        provideStore()
+      ]
     })
     .compileComponents();
 

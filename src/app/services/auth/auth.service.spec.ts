@@ -5,23 +5,23 @@ describe('AuthService', () => {
   let service: AuthService;
 
   beforeEach(() => {
-    sessionStorage.clear(); // Limpiar antes de cada prueba
+    sessionStorage.clear(); // Clear before each test
     TestBed.configureTestingModule({});
     service = TestBed.inject(AuthService);
   });
 
-  it('debería crearse el servicio', () => {
+  it('should be created', () => {
     expect(service).toBeTruthy();
   });
 
-  it('debería estar deslogueado por defecto si no hay usuario', (done) => {
+  it('should be logged out by default if no user', (done) => {
     service.isLoggedIn$.subscribe(isLoggedIn => {
       expect(isLoggedIn).toBeFalse();
       done();
     });
   });
 
-  it('debería hacer login y emitir true', (done) => {
+  it('should log in and emit true', (done) => {
     service.login('test@example.com');
     expect(sessionStorage.getItem('user')).toBe('test@example.com');
 
@@ -31,7 +31,7 @@ describe('AuthService', () => {
     });
   });
 
-  it('debería hacer logout y emitir false', (done) => {
+  it('should log out and emit false', (done) => {
     service.login('test@example.com');
     service.logout();
 
@@ -43,14 +43,15 @@ describe('AuthService', () => {
     });
   });
 
-  it('debería reconocer sesión iniciada si hay un usuario en sessionStorage', () => {
+  it('should recognize active session if user is in sessionStorage', (done) => {
     sessionStorage.setItem('user', 'persisted@example.com');
 
-    // Se necesita crear una nueva instancia del servicio para que lea sessionStorage de nuevo
-    const newService = TestBed.inject(AuthService);
+    // Create a new instance manually to re-check sessionStorage
+    const newService = new AuthService();
 
     newService.isLoggedIn$.subscribe(isLoggedIn => {
       expect(isLoggedIn).toBeTrue();
+      done();
     });
   });
 });

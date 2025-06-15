@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SortSelectorComponent } from './sort-selector.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('SortSelectorComponent', () => {
   let component: SortSelectorComponent;
@@ -8,7 +9,7 @@ describe('SortSelectorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SortSelectorComponent]
+      imports: [SortSelectorComponent, BrowserAnimationsModule]
     })
     .compileComponents();
 
