@@ -4,6 +4,7 @@ import { TooltipComponent } from './tooltip.component';
 import { provideStore } from '@ngrx/store';
 import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
+import { cartReducer } from '../../store/cart.reducer';
 
 describe('TooltipComponent', () => {
   let component: TooltipComponent;
@@ -20,7 +21,7 @@ describe('TooltipComponent', () => {
             snapshot: { paramMap: { get: () => null } }
           }
         },
-        provideStore()
+        provideStore({ cart: cartReducer })
       ]
     })
     .compileComponents();
